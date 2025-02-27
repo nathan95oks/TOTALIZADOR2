@@ -11,5 +11,17 @@ form.addEventListener("submit", (event) => {
 
   const firstNumber = Number.parseInt(first.value);
   const secondNumber = Number.parseInt(second.value);
-  div.innerHTML = "<p>" + totalizador(firstNumber,secondNumber) + "</p>";
+
+  const resultado =totalizador(firstNumber ,secondNumber);
+
+  if(Array.isArray(resultado)){
+    const [cantidad , precio ]= resultado ;
+     div.innerHTML = ` <p>Esta es la cantidad: ${cantidad}</p> <p>Este es el precio: ${precio}</p>`;
+  }
+  else{
+    div.innerHTML = `<p style="color: red;">${resultado}</p>`;
+  }
+
+ 
+
 });
