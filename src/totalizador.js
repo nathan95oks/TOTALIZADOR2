@@ -1,12 +1,13 @@
 function totalizador (a,b,estado){
  if((a <= 0 || b <= 0)){
-    return "INGRESE UN NUMERO VALIDO" ;
+    return 'INGRESE UN NUMERO VALIDO';
  }
 
 const impuestos = {
    AL: 0.04,
    NV: 0.0665,
-   UT: 0.0685
+   UT: 0.0685,
+   CA: 0.0825
 };
 
 const precioNeto = a*b;
