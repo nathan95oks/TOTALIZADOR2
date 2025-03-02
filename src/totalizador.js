@@ -5,11 +5,12 @@ function totalizador (a,b,estado){
 
 const impuestos = {
    AL: 0.04,
-   NV: 0.0665
+   NV: 0.0665,
+   UT: 0.0685
 };
 
 const precioNeto = a*b;
-const impuesto = precioNeto * (impuestos[estado] || 0);
+const impuesto = parseFloat((precioNeto * (impuestos[estado] || 0)).toFixed(3));
 const precioTotal = precioNeto + impuesto;
 
 return [a,b,precioNeto,impuesto,precioTotal];

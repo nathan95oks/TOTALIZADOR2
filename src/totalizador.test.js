@@ -9,6 +9,10 @@ it("deberia devolver la cantidad de productos y su precio con impuesto de AL ",(
   expect(totalizador(20,40, "NV")).toEqual([20,40,800,53.2,853.2]);
 });
 
+it("deberia devolver la cantidad de productos y su precio con impuesto de UT ",()=>{
+  expect(totalizador(15,50, "UT")).toEqual([15, 50, 750, 51.375, 801.375]);
+});
+
 
 
 });
