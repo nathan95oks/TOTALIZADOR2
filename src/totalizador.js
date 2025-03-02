@@ -4,7 +4,8 @@ function totalizador (a,b,estado){
  }
 
 const impuestos = {
-   AL: 0.04
+   AL: 0.04,
+   NV: 0.0665
 };
 
 const precioNeto = a*b;
