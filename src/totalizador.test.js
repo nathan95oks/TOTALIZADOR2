@@ -17,6 +17,10 @@ it('deberia devolver la cantidad de productos y su precio con impuesto de CA ',(
   expect(totalizador(25,60, 'CA')).toEqual([25, 60, 1500, 123.75, 1623.75]);
 });
 
+it('deberia devolver la cantidad de productos y su precio con impuesto de TX ',()=>{
+  expect(totalizador(30,70, 'TX')).toEqual([30, 70, 2100, 131.25, 2231.25]);
+});
+
 
 
 });

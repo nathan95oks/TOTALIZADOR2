@@ -7,7 +7,8 @@ const impuestos = {
    AL: 0.04,
    NV: 0.0665,
    UT: 0.0685,
-   CA: 0.0825
+   CA: 0.0825,
+   TX: 0.0625,
 };
 
 const precioNeto = a*b;
