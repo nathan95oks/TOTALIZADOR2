@@ -29,6 +29,12 @@ it('debería aplicar un 10% de descuento para un total de 10,000', () => {
   expect(totalizador(100, 100, 'AL')).toEqual([100, 100, 10000, 360, 9360]);
 });
 
+it('debería aplicar un 7% de descuento para un total de 7,000', () => {
+  expect(totalizador(70, 100, 'UT')).toEqual([70, 100, 7000, 445.935, 6955.935]);
+});
+
+
+
 
 
 
