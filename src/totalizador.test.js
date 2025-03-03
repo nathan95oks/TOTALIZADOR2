@@ -21,6 +21,13 @@ it('deberia devolver la cantidad de productos y su precio con impuesto de TX ',(
   expect(totalizador(30,70, 'TX')).toEqual([30, 70, 2100, 131.25, 2231.25]);
 });
 
+it('debería aplicar un 15% de descuento y calcular el impuesto en AL', () => {
+  expect(totalizador(100, 300, 'AL')).toEqual([100, 300, 30000, 1020, 26520]);
+});
+
+
+
+
 
 
 });

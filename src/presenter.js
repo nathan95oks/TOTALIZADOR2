@@ -18,10 +18,16 @@ form.addEventListener('submit', (event) => {
 
   if(Array.isArray(resultado)){
     const [cantidad , precio, precioNeto, impuesto, precioTotal]= resultado ;
+
+    const descuento = precioNeto >= 30000 ? precioNeto * 0.15 : 0;
+    const precioConDescuento = precioNeto - descuento;
+
      div.innerHTML = ` 
      <p>Esta es la cantidad: ${cantidad}</p> 
      <p>Este es el precio: ${precio}</p>
      <p>Precio Neto: ${precioNeto}</p>
+     <p>Descuento: ${descuento.toFixed(2)}</p>
+     <p>Precio con Descuento: ${precioConDescuento.toFixed(2)}</p>
      <p>Impuesto: ${impuesto}</p>
      <p>Precio Total: ${precioTotal}</p>`;
   }
