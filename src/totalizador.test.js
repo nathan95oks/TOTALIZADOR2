@@ -13,13 +13,16 @@ it('deberia devolver la cantidad de productos y su precio con impuesto de UT ',(
   expect(totalizador(15,50, 'UT')).toEqual([15, 50, 750, 51.375, 801.375]);
 });
 
-it('deberia devolver la cantidad de productos y su precio con impuesto de CA ',()=>{
-  expect(totalizador(25,60, 'CA')).toEqual([25, 60, 1500, 123.75, 1623.75]);
+it('deberia devolver la cantidad de productos y su precio con impuesto de CA', () => {
+  expect(totalizador(25, 60, 'CA')).toEqual([25, 60, 1500, 120.038, 1575.038]);
 });
 
-it('deberia devolver la cantidad de productos y su precio con impuesto de TX ',()=>{
-  expect(totalizador(30,70, 'TX')).toEqual([30, 70, 2100, 131.25, 2231.25]);
+it('debería devolver la cantidad de productos y su precio con impuesto de TX', () => {
+  expect(totalizador(30, 70, 'TX')).toEqual([30, 70, 2100, 127.313, 2164.313]);
 });
+
+
+
 
 it('debería aplicar un 15% de descuento y calcular el impuesto en AL', () => {
   expect(totalizador(100, 300, 'AL')).toEqual([100, 300, 30000, 1020, 26520]);
@@ -35,6 +38,10 @@ it('debería aplicar un 7% de descuento para un total de 7,000', () => {
 
 it('debería aplicar un 5% de descuento para un total de 3,000 en UT', () => {
   expect(totalizador(30, 100, 'UT')).toEqual([30, 100, 3000, 195.225, 3045.225]);
+});
+
+it('debería aplicar un 3% de descuento para un total de 1,000 en CA', () => {
+  expect(totalizador(10, 100, 'CA')).toEqual([10, 100, 1000, 80.025, 1050.025]);
 });
 
 

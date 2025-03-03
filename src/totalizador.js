@@ -19,6 +19,7 @@ function totalizador(a, b, estado) {
    else if ((precioNeto >= 10000) && (precioNeto <30000)) descuento =precioNeto *0.10;
    else if ((precioNeto >= 7000) && (precioNeto <10000)) descuento =precioNeto *0.07;
    else if ((precioNeto >= 3000) && (precioNeto <70000)) descuento =precioNeto *0.05;
+   else if ((precioNeto >= 1000) && (precioNeto <3000)) descuento =precioNeto *0.03;
 
  
    const precioConDescuento = precioNeto - descuento;
