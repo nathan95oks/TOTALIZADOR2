@@ -25,6 +25,9 @@ it('debería aplicar un 15% de descuento y calcular el impuesto en AL', () => {
   expect(totalizador(100, 300, 'AL')).toEqual([100, 300, 30000, 1020, 26520]);
 });
 
+it('debería aplicar un 10% de descuento para un total de 10,000', () => {
+  expect(totalizador(100, 100, 'AL')).toEqual([100, 100, 10000, 360, 9360]);
+});
 
 
 

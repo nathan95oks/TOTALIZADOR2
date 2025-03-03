@@ -14,9 +14,9 @@ function totalizador(a, b, estado) {
    const precioNeto = a * b;
  
    let descuento = 0;
-   if (precioNeto >= 30000) {
+   if (precioNeto >= 30000) 
      descuento = precioNeto * 0.15;
-   }
+   else if ((precioNeto >= 10000) && (precioNeto <=30000)) descuento =precioNeto *0.10;
  
    const precioConDescuento = precioNeto - descuento;
  
