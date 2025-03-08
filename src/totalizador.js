@@ -1,5 +1,5 @@
-function totalizador(a, b, estado, categoria) {
-  if (a <= 0 || b <= 0) {
+function totalizador(a, b, estado, categoria, pesoVolumetrico) {
+  if (a <= 0 || b <= 0 || pesoVolumetrico < 0) {
     return 'INGRESE UN NUMERO VALIDO';
   }
 
@@ -45,9 +45,30 @@ function totalizador(a, b, estado, categoria) {
   const precioConDescuentoAdicional = precioConDescuento - (precioConDescuento * descuentoAdicional);
 
   const impuesto = parseFloat((precioConDescuentoAdicional * (impuestoBase + impuestoAdicional)).toFixed(3));
-  const precioTotal = parseFloat((precioConDescuentoAdicional + impuesto).toFixed(3));
+  const precioSinEnvio = parseFloat((precioConDescuentoAdicional + impuesto).toFixed(3));
 
-  return [a, b, precioNeto, impuesto, precioTotal];
+  // Cálculo del costo de envío
+  let costoEnvioPorUnidad = 0;
+  if (pesoVolumetrico >= 0 && pesoVolumetrico <= 10) {
+    costoEnvioPorUnidad = 0;
+  } else if (pesoVolumetrico >= 11 && pesoVolumetrico <= 20) {
+    costoEnvioPorUnidad = 3.5;
+  } else if (pesoVolumetrico >= 21 && pesoVolumetrico <= 40) {
+    costoEnvioPorUnidad = 5;
+  } else if (pesoVolumetrico >= 41 && pesoVolumetrico <= 80) {
+    costoEnvioPorUnidad = 6;
+  } else if (pesoVolumetrico >= 81 && pesoVolumetrico <= 100) {
+    costoEnvioPorUnidad = 6.5;
+  } else if (pesoVolumetrico >= 101 && pesoVolumetrico <= 200) {
+    costoEnvioPorUnidad = 8;
+  } else if (pesoVolumetrico > 200) {
+    costoEnvioPorUnidad = 9;
+  }
+
+  const costoEnvioTotal = a * costoEnvioPorUnidad;
+  const precioTotal = parseFloat((precioSinEnvio + costoEnvioTotal).toFixed(3));
+
+  return [a, b, precioNeto, impuesto, precioTotal, costoEnvioTotal];
 }
 
 export default totalizador;
