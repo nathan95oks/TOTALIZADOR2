@@ -21,7 +21,17 @@
         <option value="AL">Texas (TX)</option>
       </select>
       <br></br>
-      <input type="submit" value="totalizar" id="totalizador-button" />
+      <label for="categoria">Categoría:</label>
+      <select id="categoria">
+        <option value="Varios" selected>Varios</option>
+        <option value="Alimentos">Alimentos</option>
+        <option value="Bebidas alcohólicas">Bebidas alcohólicas</option>
+        <option value="Material de escritorio">Material de escritorio</option>
+        <option value="Muebles">Muebles</option>
+        <option value="Electrónicos">Electrónicos</option>
+        <option value="Vestimenta">Vestimenta</option>
+      </select>
+      <br></br>      <input type="submit" value="totalizar" id="totalizador-button" />
     </form>
     <div id="resultado-div"></div>
     <script type="module" src="./src/presenter.js"></script>

@@ -4,6 +4,7 @@ import totalizador from './totalizador';
 const first = document.querySelector('#primer-numero');
 const second = document.querySelector('#segundo-numero');
 const estado = document.querySelector('#estado');
+const categoria = document.querySelector('#categoria');
 const form = document.querySelector('#totalizador-form');
 const div = document.querySelector('#resultado-div');
 
@@ -13,8 +14,10 @@ form.addEventListener('submit', (event) => {
   const firstNumber = Number.parseInt(first.value);
   const secondNumber = Number.parseInt(second.value);
   const estadoValue = estado.value;
+  const categoriaValue = categoria.value;
 
-  const resultado =totalizador(firstNumber ,secondNumber, estadoValue);
+
+  const resultado =totalizador(firstNumber ,secondNumber, estadoValue, categoriaValue);
 
   if(Array.isArray(resultado)){
     const [cantidad , precio, precioNeto, impuesto, precioTotal]= resultado ;
